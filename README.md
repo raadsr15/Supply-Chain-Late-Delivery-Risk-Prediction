@@ -272,7 +272,7 @@ This study demonstrates that classical machine learning models, particularly **t
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/raadsr15/Supply Chain Late Delivery Risk Prediction (ML).git
+git clone https://github.com/raadsr15/Supply Chain Late Delivery Risk Prediction.git
 cd supplychain-late-delivery-risk
 
 2. **Install dependencies:**
@@ -284,5 +284,5 @@ cd supplychain-late-delivery-risk
 3. Train the models and obtain results
    
 ```bash
-jupyter notebook Supply Chain Late Delivery Risk Prediction (ML).ipynb
+jupyter notebook Supply Chain Late Delivery Risk Prediction.ipynb
 ```

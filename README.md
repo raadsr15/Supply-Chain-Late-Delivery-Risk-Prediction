@@ -1,9 +1,13 @@
 # Supply Chain Late Delivery Risk Prediction (ML)
 
 ## Overview
-This project builds a machine learning system to predict whether an order will be delivered late using real-world supply chain and logistics data. The goal is to help organizations identify high-risk shipments in advance and understand the operational factors that contribute to delivery delays.
+Timely delivery is a key performance driver in supply chain operations, directly affecting customer satisfaction and operational efficiency. This project develops a machine learning–based solution to identify late delivery risks using real-world logistics and order data from the DataCo Smart Supply Chain dataset.
 
-The project focuses on clean data preprocessing, leakage-safe target creation, and systematic benchmarking of multiple classification models rather than complex deep learning, making it practical and industry-oriented.
+The workflow begins with structured data cleaning and preprocessing, including the removal of sensitive fields, handling missing values, and standardizing features. Exploratory analysis was conducted to understand customer behavior, regional demand patterns, and delivery performance across different shipping modes. A binary classification target was then created to distinguish late deliveries from on-time shipments, with careful handling of leakage-prone variables.
+
+Multiple machine learning models were benchmarked using a stratified train–test split and cross-validation, including Random Forest, Gradient Boosting, Extra Trees, AdaBoost, KNN, XGBoost, and LightGBM. Tree-based ensemble models delivered consistently strong performance, highlighting clear operational patterns governing delivery delays.
+
+Feature importance analysis showed that shipping timelines, delivery schedules, and shipping modes are the primary drivers of late deliveries, while customer demographics play a secondary role. Overall, the project demonstrates how interpretable machine learning models can support proactive logistics monitoring and data-driven decision-making in supply chain environments.
 
 ---
 

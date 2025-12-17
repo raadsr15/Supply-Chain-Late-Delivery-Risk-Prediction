@@ -267,3 +267,22 @@ This confirms that **delivery delays are primarily driven by logistical executio
 
 ### Final Takeaway
 This study demonstrates that classical machine learning models, particularly **tree-based ensembles**, can accurately identify late delivery risks in supply chain data. Feature importance analysis highlights that **operational and logistical variables dominate delivery outcomes**, providing actionable insights for supply chain optimization.
+
+## Installation and Usage
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/raadsr15/Supply Chain Late Delivery Risk Prediction (ML).git
+cd supplychain-late-delivery-risk
+
+2. **Install dependencies:**
+
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+3. Train the models and obtain results
+   
+```bash
+jupyter notebook Supply Chain Late Delivery Risk Prediction (ML).ipynb
+```

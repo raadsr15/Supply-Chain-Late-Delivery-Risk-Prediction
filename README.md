@@ -24,3 +24,59 @@ Additional real-world factors such as **biweekly public-sector salary payments**
 **Source:**  
 Kaggle – Store Sales: Time Series Forecasting  
 https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data
+
+
+---
+
+## Problem Definition
+**Task:** Binary classification  
+**Target:**  
+- `late_delivery = 1` → Order delivered late  
+- `late_delivery = 0` → Order delivered on time  
+
+The target is derived from the `delivery_status` column, and all leakage-prone fields are removed before training.
+
+---
+
+## Project Workflow
+1. **Data Cleaning**
+   - Removal of sensitive and irrelevant fields (PII)
+   - Handling missing values
+   - Standardized column naming
+
+2. **Exploratory Data Analysis (EDA)**
+   - Sales distribution analysis
+   - Customer segment and market distribution
+   - Delivery status breakdown
+   - Shipping mode vs. delivery status analysis
+
+3. **Feature Preparation**
+   - Categorical encoding using ordinal encoding
+   - Numerical feature scaling
+   - Leakage-safe feature selection
+
+4. **Model Benchmarking**
+   - Multiple classifiers trained on the same data
+   - Stratified train/test split
+   - 10-fold cross-validation
+
+5. **Evaluation & Interpretation**
+   - Accuracy and cross-validation scores
+   - Confusion matrices
+   - Precision, recall, and F1-score
+   - Feature importance analysis for tree-based models
+
+---
+
+## Models Evaluated
+- Logistic Regression (baseline)
+- Random Forest
+- Extra Trees
+- Gradient Boosting
+- K-Nearest Neighbors (KNN)
+- Decision Tree
+- AdaBoost  
+- XGBoost 
+- LightGBM 
+
+---

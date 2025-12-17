@@ -230,6 +230,10 @@ Secondary contributors included:
 - Financial indicators (benefit per order, profit metrics)
 
 #### Example: Random Forest Top Features
+
+<img width="984" height="584" alt="image" src="https://github.com/user-attachments/assets/298305c4-b7ad-4d19-8abd-a14ddba6356b" />
+
+
 - `days_for_shipping_real` → **56.4%**
 - `shipping_mode` → **15.6%**
 - `days_for_shipment_scheduled` → **15.2%**

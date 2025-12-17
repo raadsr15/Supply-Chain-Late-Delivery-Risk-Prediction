@@ -80,3 +80,82 @@ The target is derived from the `delivery_status` column, and all leakage-prone f
 - LightGBM 
 
 ---
+
+## Exploratory Data Analysis (EDA)
+
+This section summarizes key insights obtained from exploratory analysis of the supply chain dataset. The goal of EDA was to understand sales behavior, customer composition, market distribution, and delivery performance before model development.
+
+---
+
+### 1. Sales Distribution
+
+<img width="984" height="584" alt="image" src="https://github.com/user-attachments/assets/fa14e5b6-afbc-453a-b838-05b32b5f8643" />
+
+- Sales values are **right-skewed**, with the majority of transactions occurring at **lower sales volumes**.
+- A small number of orders exhibit **very high sales values**, indicating the presence of **outliers** or bulk purchases.
+- This skewness suggests that scaling and robust models are necessary to handle extreme values effectively.
+
+**Insight:**  
+Most orders are small to medium in size, while a limited number of high-volume transactions can disproportionately influence model learning.
+
+---
+
+### 2. Customer Segment Distribution
+
+<img width="984" height="584" alt="image" src="https://github.com/user-attachments/assets/6ac112a8-25f3-4721-8fc4-2fd44e7bec26" />
+
+- The **Consumer** segment dominates the dataset, accounting for **over half of all orders**.
+- **Corporate** customers form the second-largest segment.
+- **Home Office** customers represent the smallest share.
+
+**Insight:**  
+Supply chain operations are primarily driven by consumer demand, but corporate orders still form a significant portion and may exhibit different delivery patterns.
+
+---
+
+### 3. Market Distribution
+
+<img width="795" height="784" alt="image" src="https://github.com/user-attachments/assets/88eec0c2-7370-49a6-8916-64f7deb9d314" />
+
+- **LATAM** and **Europe** are the largest markets by order volume.
+- **Pacific Asia** shows moderate activity.
+- **USCA** and **Africa** contribute relatively fewer orders.
+
+**Insight:**  
+Regional differences in demand and logistics volume suggest that geographic features are important predictors of delivery performance.
+
+---
+
+### 4. Delivery Status Distribution
+
+<img width="984" height="584" alt="image" src="https://github.com/user-attachments/assets/9a781647-3a37-4b53-9dea-c98b1fbe002a" />
+
+- A large proportion of orders are labeled as **Late Delivery**, significantly outnumbering on-time deliveries.
+- **Advance shipping** and **shipping on time** occur less frequently.
+- **Shipping canceled** represents a small fraction of total orders.
+
+**Insight:**  
+Late deliveries are a major operational issue in the dataset, justifying the need for predictive models focused on delay risk identification.
+
+---
+
+### 5. Delivery Status by Shipping Mode
+
+<img width="623" height="464" alt="image" src="https://github.com/user-attachments/assets/1e78c20e-1784-4ff6-b5ee-4f7352cee7da" />
+
+- **First Class** shipping shows a **very high percentage of late deliveries**, indicating possible over-promising on fast delivery.
+- **Same Day** shipping has a comparatively higher proportion of **on-time deliveries**, but still suffers from delays.
+- **Second Class** shipping is heavily affected by late deliveries.
+- **Standard Class** shows the **best balance**, with a higher share of advance and on-time shipments.
+
+**Insight:**  
+Shipping mode plays a critical role in delivery outcomes. Faster shipping options do not necessarily guarantee timely delivery and may introduce higher delay risks.
+
+---
+
+### Overall EDA Takeaways
+- The dataset exhibits **class imbalance** in delivery outcomes, particularly with late deliveries dominating.
+- Customer segment, market, and shipping mode all show strong relationships with delivery performance.
+- These patterns justify the use of **machine learning classification models** and emphasize the importance of feature selection and model interpretability.
+
+---

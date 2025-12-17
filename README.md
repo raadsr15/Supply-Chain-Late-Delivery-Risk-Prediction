@@ -9,9 +9,18 @@ The project focuses on clean data preprocessing, leakage-safe target creation, a
 
 ## Dataset
 **DataCo Smart Supply Chain Dataset**  
-(Source: “DataCo Smart Supply Chain for Big Data Analysis”)
 
-The dataset contains order, customer, product, shipping, and regional information related to supply chain operations.
+This dataset contains historical sales data from **Favorita**, a major grocery retailer in Ecuador. The objective is to predict daily sales for multiple **product families** across different **stores** using time-series data, promotional information, and external economic factors.
 
-**Note:**  
-The dataset is **not included** in this repository. Download it separately and place it in:
+The primary training data includes **date**, **store number**, **product family**, **promotion status**, and the target variable **sales**, which represents total daily sales (fractional values are possible). The test dataset contains the **15 days following the final date in the training set**.
+
+Several supplementary datasets provide important contextual information:
+- **Store metadata** (city, state, store type, and cluster)
+- **Daily oil prices**, reflecting Ecuador’s dependence on oil and its impact on economic activity
+- **Holiday and event information**, including transferred holidays, bridge days, and special workdays
+
+Additional real-world factors such as **biweekly public-sector salary payments** and the **April 2016 earthquake in Ecuador** significantly influenced consumer purchasing behavior. These elements make the dataset particularly suitable for realistic demand forecasting and applied machine learning projects.
+
+**Source:**  
+Kaggle – Store Sales: Time Series Forecasting  
+https://www.kaggle.com/competitions/store-sales-time-series-forecasting/data

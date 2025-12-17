@@ -159,3 +159,103 @@ Shipping mode plays a critical role in delivery outcomes. Faster shipping option
 - These patterns justify the use of **machine learning classification models** and emphasize the importance of feature selection and model interpretability.
 
 ---
+
+
+## Results and Model Performance
+
+### Target Distribution
+The target variable (`late_delivery`) shows a **moderate class imbalance**:
+
+- **Late deliveries:** ~54.8%  
+- **On-time deliveries:** ~45.2%
+
+This indicates that late delivery is a frequent operational issue, reinforcing the relevance of predictive modeling for delay risk mitigation.
+
+---
+
+### Model Benchmarking Results
+Multiple machine learning classifiers were evaluated using a **stratified train–test split** and **10-fold cross-validation**. Performance was assessed using accuracy, precision, recall, F1-score, confusion matrices, and cross-validation stability.
+
+#### Overall Performance Summary
+| Model | Test Accuracy | CV Accuracy |
+|------|--------------|------------|
+| Random Forest | 100.00% | 100.00% |
+| Gradient Boosting | 100.00% | 100.00% |
+| Decision Tree | 100.00% | 100.00% |
+| XGBoost | 100.00% | 100.00% |
+| LightGBM | 100.00% | 100.00% |
+| Extra Trees | 99.99% | 99.98% |
+| AdaBoost | 99.71% | 99.67% |
+| KNN | 61.93% | 61.44% |
+
+---
+
+### Key Observations
+
+#### 1. Tree-Based Models Dominate
+Ensemble tree-based models (Random Forest, Gradient Boosting, Extra Trees, XGBoost, LightGBM) achieved **near-perfect classification performance**, significantly outperforming distance-based methods such as KNN.
+
+This suggests that:
+- Delivery delays are governed by **clear, rule-like patterns**
+- Non-linear feature interactions play a major role
+
+---
+
+#### 2. Interpreting Perfect Accuracy (Important Note)
+The consistently perfect or near-perfect performance across multiple tree-based models indicates that **delivery timing variables strongly encode the outcome**.
+
+In particular:
+- `days_for_shipping_real`
+- `days_for_shipment_scheduled`
+
+These features are **highly predictive by nature** and effectively define whether a delivery is late. This explains the deterministic performance and highlights a real-world scenario where **post-shipment operational data makes delay detection trivial**.
+
+> This is realistic for *delay detection* systems, but should be carefully handled if the goal is *early delay prediction*.
+
+---
+
+### Feature Importance Analysis
+
+Across all high-performing models, the same dominant predictors consistently emerged:
+
+#### Most Influential Features
+1. **Days for Shipping (Actual)**  
+2. **Days for Shipment (Scheduled)**  
+3. **Shipping Mode**  
+4. **Order Status**  
+
+Secondary contributors included:
+- Order and customer identifiers
+- Geographic features (latitude, longitude, city, country)
+- Financial indicators (benefit per order, profit metrics)
+
+#### Example: Random Forest Top Features
+- `days_for_shipping_real` → **56.4%**
+- `shipping_mode` → **15.6%**
+- `days_for_shipment_scheduled` → **15.2%**
+- `order_status` → **5.9%**
+
+This confirms that **delivery delays are primarily driven by logistical execution and shipping policies rather than customer demographics**.
+
+---
+
+### Model Comparison Insights
+
+- **Random Forest, Gradient Boosting, XGBoost, and LightGBM** provide both **high accuracy and stable cross-validation performance**, making them strong candidates for deployment.
+- **AdaBoost** performs well but shows slightly reduced robustness.
+- **KNN** struggles due to high dimensionality and categorical encoding, making it unsuitable for this dataset.
+
+---
+
+### Business Interpretation
+- Faster shipping modes do not guarantee on-time delivery and may increase operational risk.
+- Monitoring real vs scheduled shipping days enables **early identification of late deliveries**.
+- ML-based delay detection systems can support:
+  - Proactive customer communication
+  - Dynamic logistics re-routing
+  - Operational performance audits
+
+---
+
+### Final Takeaway
+This study demonstrates that classical machine learning models, particularly **tree-based ensembles**, can accurately identify late delivery risks in supply chain data. Feature importance analysis highlights that **operational and logistical variables dominate delivery outcomes**, providing actionable insights for supply chain optimization.

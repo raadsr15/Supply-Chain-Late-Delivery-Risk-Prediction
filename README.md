@@ -1,3 +1,6 @@
+
+![seedream-4 5_Abstract_professional_supply_chain_intelligence_background_with_interconnected_d-0](https://github.com/user-attachments/assets/a33dea09-54d7-4529-9771-bacaf90d62be)
+
 # Supply Chain Late Delivery Risk Prediction (ML)
 
 ## Overview
